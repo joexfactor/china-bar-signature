@@ -8,11 +8,9 @@ var port = process.env.PORT || 8080;
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/dist'));
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+// set the home page route
+app.use('/', function(req, res) {
+    res.render('index');
 });
 
 app.listen(port, function() {
