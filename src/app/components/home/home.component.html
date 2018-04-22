@@ -8,7 +8,7 @@
           <!-- <a href="#" target="_blank" class="btn btn-outline-white btn-lg ftco-animate" data-toggle="modal" data-target="#reservationModal">Reservation</a> -->
 
           <a href="https://www.google.com/maps/search/?api=1&query=-37.855023,145.168117&query_place_id=ChIJc5cRyg8_1moRRSYtyPGRddA">
-            Google MAP
+            Find Me
           </a>
 
         </p>
@@ -21,8 +21,8 @@
       <div class="modal-content">
         <div class="modal-body">
           <div class="row">
-            <div class="col-lg-4 bg-image" style="background-image: url(src/assets/images/bg_3.jpg);"></div>
-            <div class="col-lg-8 p-5">
+            <div class="col-lg-4 bg-image" style="background-image: url(../../../assets/images/bg_3.jpg);"></div>
+            <div class="col-lg-8 p-5" style="background-image: url(../../../assets/images/bg_resev.jpg);">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <small>CLOSE </small>
                 <span aria-hidden="true">&times;</span>
@@ -61,15 +61,19 @@
                     <input type="text" class="form-control" id="m_phone">
                   </div>
                 </div>
-
+                <!--add session time -->
                 <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label for="m_people">Which session</label>
+                    <select name="" id="t_session" class="form-control">
+                      <option value="1">10：00am ~ 13:00pm</option>
+                      <option value="2">16：00am ~ 21:00pm</option>
+                    </select>
+                  </div>
+
                   <div class="col-md-6 form-group">
                     <label for="m_date">Date</label>
                     <input type="text" class="form-control" id="m_date">
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <label for="m_time">Time</label>
-                    <input type="text" class="form-control" id="m_time">
                   </div>
                 </div>
 
