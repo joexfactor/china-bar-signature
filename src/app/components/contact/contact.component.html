@@ -35,5 +35,17 @@
     </div>
   </div>
 </section>
-<div id="map"></div>
+
+<div id="map">
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+    <agm-marker [latitude]="latitude" [longitude]="longitude">
+      <agm-info-window [isOpen]="isOpen">
+        <h6>
+          <strong>Chinabar Burwood</strong>
+        </h6>380 Burwood Highway, Burwood East, VIC 3151</agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>
+
+<!-- <div id="map"></div> -->
 <!-- END contact section -->
