@@ -14,7 +14,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { AgmCoreModule } from '@agm/core';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { AgmCoreModule } from '@agm/core';
     BrowserModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAgjxLOMflam6_646mkR686HaTQ7K2nFP0'
-    })
+    }),
+    NgbModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
