@@ -29,7 +29,7 @@ import { UserComponent } from './user/user.component';
 
 const appRoutes: Routes = [
   {path: '', component: UserComponent },
-  {path: 'admin', component: AdminComponent },
+  {path: 'admin', component: AdminComponent }
 ];
 
 @NgModule({
@@ -48,7 +48,7 @@ const appRoutes: Routes = [
     ReservationComponent,
     ReservationListComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,8 +3,7 @@ import { ReserveserviceService } from './shared/reserveservice.service';
 @Component({
   selector: 'app-reservations',
   templateUrl: './reservations.component.html',
-  styleUrls: ['./reservations.component.css'],
-  providers: [ReserveserviceService]
+  styleUrls: ['./reservations.component.css']
 })
 export class ReservationsComponent implements OnInit {
 
