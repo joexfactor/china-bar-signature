@@ -1,28 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { OfferComponent } from './components/offer/offer.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { NewsComponent } from './components/news/news.component';
-import { GalleryComponent } from './components/gallery/gallery.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './user/navbar/navbar.component';
+import { HomeComponent } from './user/home/home.component';
+import { AboutComponent } from './user/about/about.component';
+import { OfferComponent } from './user/offer/offer.component';
+import { MenuComponent } from './user/menu/menu.component';
+import { NewsComponent } from './user/news/news.component';
+import { GalleryComponent } from './user/gallery/gallery.component';
+import { ContactComponent } from './user/contact/contact.component';
+import { FooterComponent } from './user/footer/footer.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { environment } from '../environments/environment';
-import { ReservationsComponent } from './reservations/reservations.component';
-import { ReservationComponent } from './reservations/reservation/reservation.component';
-import { ReservationListComponent } from './reservations/reservation-list/reservation-list.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { ReservationsComponent } from './admin/reservations/reservations.component';
+import { ReservationComponent } from './admin/reservations/reservation/reservation.component';
+import { ReservationListComponent } from './admin/reservations/reservation-list/reservation-list.component';
+import { AdminComponent } from './admin/admin.component';
 import {ToastrModule} from 'ngx-toastr';
+import {RouterModule, Routes} from '@angular/router';
+import { UserComponent } from './user/user.component';
+
+const appRoutes: Routes = [
+  {path: '', component: UserComponent },
+  {path: 'admin', component: AdminComponent },
+];
 
 @NgModule({
   declarations: [
@@ -39,7 +47,8 @@ import {ToastrModule} from 'ngx-toastr';
     ReservationsComponent,
     ReservationComponent,
     ReservationListComponent,
-    AdminComponent
+    AdminComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -49,10 +58,13 @@ import {ToastrModule} from 'ngx-toastr';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule ],
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ReserveserviceService} from '../shared/reserveservice.service';
 
 import { Reservation } from '../shared/reservation.model';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-reservation-list',
@@ -11,7 +12,8 @@ import { Reservation } from '../shared/reservation.model';
 export class ReservationListComponent implements OnInit {
 
   reservationList: Reservation[];
-  constructor(private reservationservice: ReserveserviceService) { }
+  constructor(private reservationservice: ReserveserviceService,
+              private tostr: ToastrService) { }
 
   ngOnInit() {
     const x = this.reservationservice.getData();
@@ -28,6 +30,9 @@ export class ReservationListComponent implements OnInit {
     this.reservationservice.selectedReservation = Object.assign({}, reservation);
   }
   onDelete($key: string) {
-
+    if (confirm('Are you sure to delete this record ? ') === true) {
+      this.reservationservice.deleteReservation($key);
+      this.tostr.warning('Deleted Successfauly', 'Reservarion register');
+    }
   }
 }
