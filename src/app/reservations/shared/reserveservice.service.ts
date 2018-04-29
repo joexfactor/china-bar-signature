@@ -22,8 +22,7 @@ export class ReserveserviceService {
         phone: reservation.phone,
         book_date: reservation.book_date,
         session: reservation.session,
-        book_message: reservation.book_message,
-
+        book_message: reservation.book_message
         // colum1: reservation.colum1,
         // colum2: reservation.colum2,
         // colum3: reservation.colum3
@@ -39,8 +38,7 @@ export class ReserveserviceService {
         phone: reservation.phone,
         book_date: reservation.book_date,
         session: reservation.session,
-        book_message: reservation.book_message,
-
+        book_message: reservation.book_message
         // colum1: reservation.colum1,
         // colum2: reservation.colum2,
         // colum3: reservation.colum3

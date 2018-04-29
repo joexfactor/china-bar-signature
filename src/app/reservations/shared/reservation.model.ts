@@ -8,7 +8,6 @@ export class Reservation {
   book_date: string;
   session: string;
   book_message: string;
-
   // colum1: string;
   // colum2: string;
   // colum3: string;
