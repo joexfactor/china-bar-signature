@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -14,7 +15,13 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { AgmCoreModule } from '@agm/core';
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule} from 'angularfire2/database';
+import { environment } from '../environments/environment';
+import { ReservationsComponent } from './reservations/reservations.component';
+import { ReservationComponent } from './reservations/reservation/reservation.component';
+import { ReservationListComponent } from './reservations/reservation-list/reservation-list.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +34,21 @@ import { AgmCoreModule } from '@agm/core';
     NewsComponent,
     GalleryComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    ReservationsComponent,
+    ReservationComponent,
+    ReservationListComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAgjxLOMflam6_646mkR686HaTQ7K2nFP0'
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
