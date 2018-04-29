@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ReserveserviceService} from '../shared/reserveservice.service';
 import {NgForm} from '@angular/forms';
+import {ToastrService} from 'ngx-toastr';
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
@@ -8,18 +9,22 @@ import {NgForm} from '@angular/forms';
 })
 export class ReservationComponent implements OnInit {
 
-  constructor(public reservationservice: ReserveserviceService) { }
+  constructor(public reservationservice: ReserveserviceService,
+              private tostr: ToastrService) { }
 
   ngOnInit() {
-    this.reservationservice.getData();
     this.resetForm();
   }
   onSubmit(reservationForm: NgForm) {
     // if the key is null, it is a new item, use insert, else use update
-    this.reservationservice.insertReservation(reservationForm.value);
+    if (reservationForm.value.$key === null) {
+      this.reservationservice.insertReservation(reservationForm.value);
+      this.tostr.success('Submitted Successfully', 'Reservation Register');
+    } else {
+      this.reservationservice.updateReservation(reservationForm.value);
+      this.tostr.success('Modified Successfully', 'Reservation Register');
+    }
     this.resetForm(reservationForm);
-   // this.tostr.success('Submitted Successfully', 'Employee Register');
-
   }
   resetForm(reservationForm?: NgForm) {
     if (reservationForm != null) {

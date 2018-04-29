@@ -22,6 +22,7 @@ import { ReservationsComponent } from './reservations/reservations.component';
 import { ReservationComponent } from './reservations/reservation/reservation.component';
 import { ReservationListComponent } from './reservations/reservation-list/reservation-list.component';
 import { AdminComponent } from './components/admin/admin.component';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AdminComponent } from './components/admin/admin.component';
     }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot()
 
   ],
   providers: [],

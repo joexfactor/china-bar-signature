@@ -1,4 +1,5 @@
 <form #reservationForm="ngForm" (ngSubmit)="onSubmit(reservationForm)">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="reservationservice.selectedReservation.$key">
   <div class="form-group">
     <label>First Name</label>
     <input type="text" class="form-control" name="first_name" #first_name="ngModel"
