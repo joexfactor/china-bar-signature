@@ -3,7 +3,7 @@ export class Reservation {
   first_name: string;
   last_name: string;
   email: string;
-  no_of_people: number;
+  no_of_people: string;
   phone: string;
   book_date: string;
   session: string;

@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {ReserveserviceService} from '../shared/reserveservice.service';
-
-import { Reservation } from '../shared/reservation.model';
+import {ReserveserviceService} from '../../admin/reservations/shared/reserveservice.service';
 import {ToastrService} from 'ngx-toastr';
+import {Reservation} from '../../admin/reservations/shared/reservation.model';
 
 @Component({
-  selector: 'app-reservation-list',
-  templateUrl: './reservation-list.component.html',
-  styleUrls: ['./reservation-list.component.css']
+  selector: 'app-booking-list',
+  templateUrl: './booking-list.component.html',
+  styleUrls: ['./booking-list.component.css']
 })
-export class ReservationListComponent implements OnInit {
-
+export class BookingListComponent implements OnInit {
   reservationList: Reservation[];
   constructor(private reservationservice: ReserveserviceService,
               private tostr: ToastrService) { }
@@ -35,7 +33,5 @@ export class ReservationListComponent implements OnInit {
       this.tostr.warning('Deleted Successfauly', 'Reservarion register');
     }
   }
-  returnHome() {
-    window.location.href = '/';
-  }
+
 }

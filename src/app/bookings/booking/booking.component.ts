@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {ReserveserviceService} from '../shared/reserveservice.service';
-import {NgForm} from '@angular/forms';
+import {ReserveserviceService} from '../../admin/reservations/shared/reserveservice.service';
 import {ToastrService} from 'ngx-toastr';
+import {NgForm} from '@angular/forms';
+
 @Component({
-  selector: 'app-reservation',
-  templateUrl: './reservation.component.html',
-  styleUrls: ['./reservation.component.css']
+  selector: 'app-booking',
+  templateUrl: './booking.component.html',
+  styleUrls: ['./booking.component.css']
 })
-export class ReservationComponent implements OnInit {
+export class BookingComponent implements OnInit {
 
   constructor(public reservationservice: ReserveserviceService,
               private tostr: ToastrService) { }
@@ -20,9 +21,9 @@ export class ReservationComponent implements OnInit {
     if (reservationForm.value.$key === null) {
       this.reservationservice.insertReservation(reservationForm.value);
       this.tostr.success('Submitted Successfully', 'Reservation Register');
+      window.location.href = '/';
     } else {
-      this.reservationservice.updateReservation(reservationForm.value);
-      this.tostr.success('Modified Successfully', 'Reservation Register');
+      this.tostr.warning('Submitted failed, please phone the restaurant', 'Reservation Register');
     }
     this.resetForm(reservationForm);
   }

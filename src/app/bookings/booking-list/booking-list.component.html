@@ -1,20 +1,16 @@
-<div class="col-xs-6 col-md-4" >
-  <button (click)="returnHome()"> Return Home</button>
-</div>
-<h6 class="text-center">Reservation Register</h6><br/>
-
+<h6 class="text-center">Booking Register</h6><br/>
 <table class="table table-sm table-hover">
   <tr *ngFor="let reservation of reservationList">
-    <td>{{reservation.first_name}}</td>
-    <td>{{reservation.email}}</td>
-    <td>{{reservation.no_of_people}}</td>
+    <td>{{reservation.last_name}}</td>
     <td>{{reservation.book_date}}</td>
+    <td>{{reservation.session}}</td>
+    <td>{{reservation.phone}}</td>
     <td>
       <a class="btn" (click)="onEdit(reservation)">
-        Edit
+        <i class="fa fa-pencil-square-o"></i>
       </a>
       <a class="btn" (click)="onDelete(reservation.$key)">
-        Delete
+        <i class="fa fa-trash-o"></i>
       </a>
     </td>
   </tr>
