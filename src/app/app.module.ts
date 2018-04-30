@@ -29,18 +29,13 @@ import { UserComponent } from './user/user.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { BookingComponent } from './bookings/booking/booking.component';
 import { BookingListComponent } from './bookings/booking-list/booking-list.component';
-import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 const appRoutes: Routes = [
-<<<<<<< HEAD
   { path: '', component: UserComponent },
-  { path: 'admin', component: AdminComponent }
-=======
-  {path: '', component: UserComponent },
-  {path: 'admin', component: AdminComponent},
-  {path: 'book', component: BookingsComponent},
-  {path: 'reservations', component: ReservationsComponent},
->>>>>>> 01363acb1736828353010d6de124807cf8bd7d4a
+  { path: 'admin', component: AdminComponent },
+  { path: 'book', component: BookingsComponent },
+  { path: 'reservations', component: ReservationsComponent },
 ];
 
 @NgModule({
@@ -77,13 +72,8 @@ const appRoutes: Routes = [
     FormsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-<<<<<<< HEAD
-    BrowserAnimationsModule
-=======
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot()
-
->>>>>>> 01363acb1736828353010d6de124807cf8bd7d4a
   ],
   providers: [],
   bootstrap: [AppComponent],
