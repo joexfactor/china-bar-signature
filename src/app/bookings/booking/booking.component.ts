@@ -21,9 +21,9 @@ export class BookingComponent implements OnInit {
     if (reservationForm.value.$key === null) {
       this.reservationservice.insertReservation(reservationForm.value);
       this.tostr.success('Submitted Successfully', 'Reservation Register');
+      window.location.href = '/';
     } else {
-      this.reservationservice.updateReservation(reservationForm.value);
-      this.tostr.success('Modified Successfully', 'Reservation Register');
+      this.tostr.warning('Submitted failed, please phone the restaurant', 'Reservation Register');
     }
     this.resetForm(reservationForm);
   }

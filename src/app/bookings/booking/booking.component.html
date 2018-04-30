@@ -44,7 +44,7 @@
     <label>Booking Date</label>
     <input type="text" class="form-control" name="book_date" #book_date="ngModel"
            [(ngModel)]="reservationservice.selectedReservation.book_date"
-           placeholder="Booking Date">
+           placeholder="Booking Date" bsDatepicker>
   </div>
 
   <div class="form-group">
@@ -65,13 +65,10 @@
   </div>
 
   <div class="form-group">
-    <button class="btn btn-default" type="submit" [disabled]="!reservationForm.valid">
-      <i class="fa fa-floppy-o"></i>
+    <button class="btn btn-info" type="submit" [disabled]="!reservationForm.valid">
       Submit</button>
-    <button class="btn btn-default" type="button" (click)="resetForm(reservationForm)">
-      <i class="fa fa-repeat"></i>
+    <button class="btn btn-danger" type="button" (click)="resetForm(reservationForm)">
       Reset</button>
   </div>
 
 </form>
-
