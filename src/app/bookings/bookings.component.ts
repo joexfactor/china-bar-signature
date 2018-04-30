@@ -13,5 +13,7 @@ export class BookingsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  returnHome() {
+    window.location.href = '/';
+  }
 }

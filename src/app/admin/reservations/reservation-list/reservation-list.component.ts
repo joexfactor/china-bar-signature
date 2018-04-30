@@ -35,4 +35,7 @@ export class ReservationListComponent implements OnInit {
       this.tostr.warning('Deleted Successfauly', 'Reservarion register');
     }
   }
+  returnHome() {
+    window.location.href = '/';
+  }
 }
