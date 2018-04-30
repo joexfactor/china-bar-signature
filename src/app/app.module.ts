@@ -29,6 +29,7 @@ import { UserComponent } from './user/user.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { BookingComponent } from './bookings/booking/booking.component';
 import { BookingListComponent } from './bookings/booking-list/booking-list.component';
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 
 const appRoutes: Routes = [
   {path: '', component: UserComponent },
@@ -68,7 +69,8 @@ const appRoutes: Routes = [
     FormsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot()
 
   ],
   providers: [],

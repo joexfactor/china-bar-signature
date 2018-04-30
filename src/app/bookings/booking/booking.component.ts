@@ -36,7 +36,7 @@ export class BookingComponent implements OnInit {
       first_name: '',
       last_name: '',
       email: '',
-      no_of_people: 0,
+      no_of_people: '',
       phone: '',
       book_date: '',
       session: '',

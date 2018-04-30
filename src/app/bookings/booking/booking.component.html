@@ -23,9 +23,14 @@
 
   <div class="form-group">
     <label>No. of People</label>
-    <input type="text" class="form-control" name="no_of_people" #no_of_people="ngModel"
-           [(ngModel)]="reservationservice.selectedReservation.no_of_people"
-           placeholder="No. of People">
+    <select class="form-control" name="no_of_people" #no_of_people="ngModel"
+            [(ngModel)]="reservationservice.selectedReservation.no_of_people"
+            placeholder="No. of People">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4+">4+</option>
+    </select>
   </div>
 
   <div class="form-group">
@@ -44,9 +49,12 @@
 
   <div class="form-group">
     <label>Session</label>
-    <input type="text" class="form-control" name="session" #session="ngModel"
-           [(ngModel)]="reservationservice.selectedReservation.session"
-           placeholder="Session">
+    <select class="form-control" name="session" #session="ngModel"
+            [(ngModel)]="reservationservice.selectedReservation.session"
+            placeholder="Session">
+      <option value="11:30 am ~ 15:00 pm">11:30 am ~ 15:00 pm</option>
+      <option value="17:30 pm ~ 22:00 pm">17:30 pm ~ 22:00 pm</option>
+    </select>
   </div>
 
   <div class="form-group">
