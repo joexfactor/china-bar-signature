@@ -1,0 +1,68 @@
+<form #reservationForm="ngForm" (ngSubmit)="onSubmit(reservationForm)">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="reservationservice.selectedReservation.$key">
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text" class="form-control" name="first_name" #first_name="ngModel"
+           [(ngModel)]="reservationservice.selectedReservation.first_name"
+           placeholder="First Name" required>
+  </div>
+
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="text" class="form-control" name="last_name" #last_name="ngModel"
+           [(ngModel)]="reservationservice.selectedReservation.last_name"
+           placeholder="Last Name">
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" class="form-control" name="email" #email="ngModel"
+           [(ngModel)]="reservationservice.selectedReservation.email"
+           placeholder="Email">
+  </div>
+
+  <div class="form-group">
+    <label>No. of People</label>
+    <input type="text" class="form-control" name="no_of_people" #no_of_people="ngModel"
+           [(ngModel)]="reservationservice.selectedReservation.no_of_people"
+           placeholder="No. of People">
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="text" class="form-control" name="phone" #phone="ngModel"
+           [(ngModel)]="reservationservice.selectedReservation.phone"
+           placeholder="Phone">
+  </div>
+
+  <div class="form-group">
+    <label>Booking Date</label>
+    <input type="text" class="form-control" name="book_date" #book_date="ngModel"
+           [(ngModel)]="reservationservice.selectedReservation.book_date"
+           placeholder="Booking Date">
+  </div>
+
+  <div class="form-group">
+    <label>Session</label>
+    <input type="text" class="form-control" name="session" #session="ngModel"
+           [(ngModel)]="reservationservice.selectedReservation.session"
+           placeholder="Session">
+  </div>
+
+  <div class="form-group">
+    <label>Booking Message</label>
+    <input type="text" class="form-control" name="book_message" #book_message="ngModel"
+           [(ngModel)]="reservationservice.selectedReservation.book_message"
+           placeholder="Booking Message">
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-default" type="submit" [disabled]="!reservationForm.valid">
+      <i class="fa fa-floppy-o"></i>
+      Submit</button>
+    <button class="btn btn-default" type="button" (click)="resetForm(reservationForm)">
+      <i class="fa fa-repeat"></i>
+      Reset</button>
+  </div>
+
+</form>

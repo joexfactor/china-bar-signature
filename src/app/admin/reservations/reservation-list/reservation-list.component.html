@@ -1,0 +1,17 @@
+<h6 class="text-center">Reservation Register</h6><br/>
+<table class="table table-sm table-hover">
+  <tr *ngFor="let reservation of reservationList">
+    <td>{{reservation.last_name}}</td>
+    <td>{{reservation.book_date}}</td>
+    <td>{{reservation.session}}</td>
+    <td>{{reservation.phone}}</td>
+    <td>
+      <a class="btn" (click)="onEdit(reservation)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn" (click)="onDelete(reservation.$key)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+</table>
