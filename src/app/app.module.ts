@@ -26,10 +26,15 @@ import { AdminComponent } from './admin/admin.component';
 import {ToastrModule} from 'ngx-toastr';
 import {RouterModule, Routes} from '@angular/router';
 import { UserComponent } from './user/user.component';
+import { BookingsComponent } from './bookings/bookings.component';
+import { BookingComponent } from './bookings/booking/booking.component';
+import { BookingListComponent } from './bookings/booking-list/booking-list.component';
 
 const appRoutes: Routes = [
   {path: '', component: UserComponent },
-  {path: 'admin', component: AdminComponent }
+  {path: 'admin', component: AdminComponent},
+  {path: 'book', component: BookingsComponent},
+  {path: 'reservations', component: ReservationsComponent},
 ];
 
 @NgModule({
@@ -49,6 +54,9 @@ const appRoutes: Routes = [
     ReservationListComponent,
     AdminComponent,
     UserComponent,
+    BookingsComponent,
+    BookingComponent,
+    BookingListComponent,
   ],
   imports: [
     BrowserModule,
