@@ -1,2 +1,0 @@
-src/app/app.component.html:7:<app-gallery></app-gallery>
-src/app/user/user.component.html:7:<app-gallery></app-gallery>
