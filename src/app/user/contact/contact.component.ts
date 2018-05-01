@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { EmailService } from '../../services/email.service';
+import { EmailModel } from '../../services/email.model';
 
 
 @Component({
@@ -9,15 +9,23 @@ import { EmailService } from '../../services/email.service';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
+
+
 export class ContactComponent implements OnInit {
 
   latitude: number;
   longitude: number;
   zoom: number;
   isOpen: boolean;
+  name: string;
+  email: string;
+  message: string;
 
-  model = new EmailService();
-  constructor() {
+  model = new EmailModel();
+
+
+
+  constructor(private emailService: EmailService) {
     this.zoom = 12;
     this.isOpen = true;
   }
@@ -25,7 +33,10 @@ export class ContactComponent implements OnInit {
   onSubmit(contactForm: NgForm) {
     this.submitted = true;
     console.log(contactForm.value);
+    this.emailService.httpPostExample();
   }
+
+
 
   ngOnInit() {
     // Chinabar Burwood Location

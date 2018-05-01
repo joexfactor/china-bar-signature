@@ -30,6 +30,8 @@ import { BookingsComponent } from './bookings/bookings.component';
 import { BookingComponent } from './bookings/booking/booking.component';
 import { BookingListComponent } from './bookings/booking-list/booking-list.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { Http } from '@angular/http';
+import { EmailService } from './services/email.service';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent },
@@ -64,9 +66,9 @@ const appRoutes: Routes = [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAgjxLOMflam6_646mkR686HaTQ7K2nFP0'
     }),
-
     NgbModule.forRoot(),
     FormsModule,
+    Http,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     FormsModule,
@@ -75,7 +77,9 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    EmailService
+  ],
   bootstrap: [AppComponent],
   exports: [RouterModule],
 })
