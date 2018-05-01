@@ -10,7 +10,7 @@ export class EmailService {
   phone: number;
   bookingDate: Date;
   session: string;
-  bookingMessage: string;
+  message: string;
 
   constructor() { }
 }
