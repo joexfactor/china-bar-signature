@@ -29,9 +29,11 @@ import { BookingsComponent } from './bookings/bookings.component';
 import { BookingComponent } from './bookings/booking/booking.component';
 import { BookingListComponent } from './bookings/booking-list/booking-list.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import {AdminComponent} from './admin/admin.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent },
+  {path: 'admin', component: AdminComponent},
   { path: 'book', component: BookingsComponent },
   { path: 'reservations', component: ReservationsComponent },
 ];
@@ -55,6 +57,7 @@ const appRoutes: Routes = [
     BookingsComponent,
     BookingComponent,
     BookingListComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
