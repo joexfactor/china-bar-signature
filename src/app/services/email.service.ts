@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import {EmailModel} from './email.model';
-
+import { HttpModule } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { EmailModel} from './email.model';
+import { NgModule } from '@angular/core';
 
 @Injectable()
 export class EmailService {
@@ -10,12 +11,12 @@ export class EmailService {
   email: string;
   message: string;
 
-  constructor(public http: Http)  { }
+  constructor(public http: HttpClient)  { }
 
   sendEmail(model: EmailModel) {
     console.log('post');
 
-    this.http.post(`/send`,
+    this.http.post(`/contact`,
         {
             model
         })

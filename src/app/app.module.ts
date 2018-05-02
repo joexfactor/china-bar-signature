@@ -29,7 +29,8 @@ import { BookingsComponent } from './bookings/bookings.component';
 import { BookingComponent } from './bookings/booking/booking.component';
 import { BookingListComponent } from './bookings/booking-list/booking-list.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { Http } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { EmailService } from './services/email.service';
 import { AdminComponent} from './admin/admin.component';
 
@@ -67,14 +68,14 @@ const appRoutes: Routes = [
       apiKey: 'AIzaSyAgjxLOMflam6_646mkR686HaTQ7K2nFP0'
     }),
     NgbModule.forRoot(),
-    FormsModule,
-    Http,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     FormsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
+    HttpModule,
+    HttpClientModule,
     BsDatepickerModule.forRoot()
   ],
   providers: [
