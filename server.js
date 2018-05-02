@@ -7,3 +7,16 @@ app.use(express.static(__dirname + '/dist'));
 // Start the app by listening on the default
 // Heroku port
 app.listen(process.env.PORT || 8080);
+
+
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}) );
+
+var nodemailer = require('nodemailer');
+app.post('/contact', function(req, res) {
+    console.log(req.body.name);
+    console.log(req.body.email);
+    console.log(req.body.message);
+  });

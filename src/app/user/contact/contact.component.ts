@@ -32,7 +32,7 @@ export class ContactComponent implements OnInit {
   submitted = false;
   onSubmit(contactForm: NgForm) {
     this.submitted = true;
-    console.log(contactForm.value);
+    console.log(this.model);
     this.emailService.sendEmail(this.model);
   }
 
