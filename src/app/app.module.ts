@@ -22,7 +22,6 @@ import { environment } from '../environments/environment';
 import { ReservationsComponent } from './admin/reservations/reservations.component';
 import { ReservationComponent } from './admin/reservations/reservation/reservation.component';
 import { ReservationListComponent } from './admin/reservations/reservation-list/reservation-list.component';
-import { AdminComponent } from './admin/admin.component';
 import { ToastrModule } from 'ngx-toastr';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user/user.component';
@@ -32,10 +31,11 @@ import { BookingListComponent } from './bookings/booking-list/booking-list.compo
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { Http } from '@angular/http';
 import { EmailService } from './services/email.service';
+import { AdminComponent} from './admin/admin.component';
 
 const appRoutes: Routes = [
   { path: '', component: UserComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', component: AdminComponent},
   { path: 'book', component: BookingsComponent },
   { path: 'reservations', component: ReservationsComponent },
 ];
@@ -55,11 +55,11 @@ const appRoutes: Routes = [
     ReservationsComponent,
     ReservationComponent,
     ReservationListComponent,
-    AdminComponent,
     UserComponent,
     BookingsComponent,
     BookingComponent,
     BookingListComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

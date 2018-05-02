@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-// import { HttpClient } from '@angular/common/http';
+import {EmailModel} from './email.model';
 
 
 @Injectable()
@@ -12,12 +12,12 @@ export class EmailService {
 
   constructor(public http: Http)  { }
 
-  httpPostExample() {
+  sendEmail(model: EmailModel) {
     console.log('post');
 
     this.http.post(`/send`,
         {
-            'courseListIcon': '...',
+            model
         })
         .subscribe(
             (val) => {
