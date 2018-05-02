@@ -14,12 +14,6 @@ export class EmailService {
   constructor(public http: HttpClient)  { }
 
   sendEmail(model: EmailModel) {
-    console.log(
-    {
-        name: model.name,
-        email: model.email,
-        message: model.message
-    });
     this.http.post(`/contact`,
         {
             name: model.name,
